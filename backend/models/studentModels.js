@@ -1,13 +1,11 @@
 
-
-const mongoose=require("mongoose")
-
+const mongoose=require("mongoose");
 
 const stuSchema= new mongoose.Schema({
-    rollno:Number,
-    name:String,
-    city:String,
-    fees:Number
+        rollno:Number,
+        name:String,
+        city:String,
+        fees:Number
 })
 
-module.exports=mongoose.model("student",stuSchema)
+module.exports = mongoose.model("student",stuSchema)

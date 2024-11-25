@@ -1,13 +1,12 @@
 
 
-const express =require("express");
+const express=require("express");
 const route=express.Router();
-const stuController=require("../controlers/studentControlers")
-route.post("/datasave",stuController.datasave)
-route.get("/datadisplay",stuController.dataDisplay)
+const stuControler=require("../controlers/studentControlers");
 
-
-
+route.post("/datasave",stuControler.dataSave)
+route.get("/datadisplay",stuControler.dataDisplay)
+route.post("/datasearch",stuControler.dataSearch)
 
 
 module.exports=route;

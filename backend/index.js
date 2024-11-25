@@ -1,23 +1,28 @@
-const bodyparser = require('body-parser')
+
+
 const express=require("express");
 const app=express();
-const stuRoute=require("../backend/routes/studentRoutes")
-const cors=require("cors");
-const mongoose=require("mongoose");
+const bodyParser = require('body-parser');
+const cors = require("cors")
+const mongoose=require("mongoose")
+const stuRoute=require("./routes/studentRoutes")
 
 
-mongoose.connect("mongodb://127.0.0.1:27017/tanudb").then(()=>{
-    console.log("db connnecteddd")
+mongoose.connect("mongodb://127.0.0.1:27017/deshbhakt").then(()=>{
+        console.log("db connected!!!")
 })
-// Body-parser middleware
-app.use(bodyparser.urlencoded({ extended: true }))
-app.use(bodyparser.json())
+
+
+// Parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: true }));
+// Parse application/json
+app.use(bodyParser.json());
 app.use(cors());
-app.use("/students",stuRoute)
+app.use("/students",stuRoute);
 
 
-
-
-app.listen(8000,()=>{
-    console.log("server on 8000 port!!!!!")
+app.listen(8080 ,()=>{
+    console.log("server run  on 8080")
 })
+
+
