@@ -10,6 +10,7 @@ const Layout=()=>{
         <Link to="display">Display</Link>|
         <Link to="insert">Insert</Link>|
         <Link to="search">Search</Link>|
+        <Link to="delete">Delete</Link>|
         <hr size="4" color="red"/>
 
         <Outlet/>
